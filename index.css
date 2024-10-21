@@ -32,7 +32,7 @@ header {
 }
 
 .menuPrincipal .logo img {
-    width: 100px;
+    width: 300px;
     height: auto;
     transition: transform 0.3s, opacity 0.3s;
 }
@@ -104,6 +104,109 @@ section, article {
 .gallery img:hover {
     transform: scale(1.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+video {
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.input-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.input-controls input[type="text"],
+.input-controls input[type="file"],
+.input-controls button {
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.input-controls input[type="text"] {
+    width: 350px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    outline: none;
+    text-align: center;
+}
+
+.input-controls input[type="file"] {
+    background-color: #fff;
+    color: #764ba2;
+    text-align: center;
+}
+
+.input-controls button {
+    background-color: #fff;
+    color: #764ba2;
+}
+
+.input-controls button:hover,
+.input-controls input[type="file"]:hover,
+.input-controls input[type="text"]:focus {
+    background-color: #764ba2;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.controls button {
+    background-color: #fff;
+    color: #764ba2;
+    padding: 15px 25px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.controls button:hover {
+    background-color: #764ba2;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.icon-play::before {
+    content: '▶️';
+}
+
+.icon-pause::before {
+    content: '⏸️';
+}
+
+.icon-replay::before {
+    content: '🔄';
 }
 
 form {

@@ -1,0 +1,155 @@
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradiente para o brilho -->
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%">
+      <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:1" >
+        <animate attributeName="stop-color" 
+          values="#2ecc71;#27ae60;#2ecc71" 
+          dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#27ae60;stop-opacity:1" >
+        <animate attributeName="stop-color" 
+          values="#27ae60;#2ecc71;#27ae60" 
+          dur="3s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Gradiente para os olhos do sapo -->
+    <radialGradient id="eyeGradient">
+      <stop offset="0%" style="stop-color:#ffeb3b"/>
+      <stop offset="90%" style="stop-color:#fdd835"/>
+      <stop offset="100%" style="stop-color:#f57f17"/>
+    </radialGradient>
+
+    <!-- Gradiente para a íris -->
+    <radialGradient id="irisGradient">
+      <stop offset="0%" style="stop-color:#4a148c"/>
+      <stop offset="70%" style="stop-color:#311b92"/>
+      <stop offset="100%" style="stop-color:#000000"/>
+    </radialGradient>
+    
+    <!-- Filtro para sombra -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- Filtro para brilho -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Reflexo do olho -->
+    <filter id="eyeShine">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1"/>
+      <feComposite in="SourceGraphic" operator="over"/>
+    </filter>
+
+    <!-- Efeito de raio elétrico dinâmico -->
+    <filter id="electricity" x="-50%" y="-50%" width="200%" height="200%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" seed="2" result="noise">
+        <!-- Animação para mover o ruído dos raios -->
+        <animate attributeName="baseFrequency" values="0.05;0.15;0.05" dur="0.5s" repeatCount="indefinite" />
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="40" xChannelSelector="R" yChannelSelector="G">
+        <!-- Animação para os movimentos dos raios -->
+        <animate attributeName="scale" values="30;40;30" dur="0.2s" repeatCount="indefinite"/>
+      </feDisplacementMap>
+      <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 0.8  0 0 0 0 1  0 0 0 1 0"/>
+      <feBlend mode="screen" in2="SourceGraphic" result="blendedElectricity"/>
+    </filter>
+  </defs>
+
+  <!-- Grupo principal com animação de flutuação -->
+  <g transform="translate(200,100)" filter="url(#shadow)">
+    <animateTransform attributeName="transform"
+      type="translate"
+      values="200,95;200,105;200,95"
+      dur="4s"
+      repeatCount="indefinite"
+      calcMode="spline"
+      keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    
+    <!-- Círculo de fundo -->
+    <circle r="80" fill="url(#logoGradient)" filter="url(#glow)"/>
+    
+    <!-- Olhos de sapo -->
+    <!-- Olho esquerdo -->
+    <g>
+      <!-- Globo ocular -->
+      <ellipse cx="-25" cy="-20" rx="20" ry="18" fill="url(#eyeGradient)">
+        <animate attributeName="ry" 
+          values="18;16;18"
+          dur="2.5s"
+          begin="0s"
+          repeatCount="indefinite"
+          calcMode="spline"
+          keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+      </ellipse>
+      
+      <!-- Íris e pupila -->
+      <g>
+        <animateTransform attributeName="transform"
+          type="translate"
+          values="0,0; -2,1; 0,0; 2,-1; 0,0"
+          dur="4s"
+          repeatCount="indefinite"
+          additive="sum"/>
+        
+        <circle cx="-25" cy="-20" r="10" fill="url(#irisGradient)"/>
+        <circle cx="-25" cy="-20" r="4" fill="#000"/>
+        <!-- Reflexo do olho -->
+        <circle cx="-28" cy="-22" r="2" fill="#fff" filter="url(#eyeShine)"/>
+      </g>
+    </g>
+    
+    <!-- Olho direito -->
+    <g>
+      <!-- Globo ocular -->
+      <ellipse cx="25" cy="-20" rx="20" ry="18" fill="url(#eyeGradient)">
+        <animate attributeName="ry" 
+          values="18;16;18"
+          dur="2.5s"
+          begin="0s"
+          repeatCount="indefinite"
+          calcMode="spline"
+          keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+      </ellipse>
+      
+      <!-- Íris e pupila -->
+      <g>
+        <animateTransform attributeName="transform"
+          type="translate"
+          values="0,0; 2,1; 0,0; -2,-1; 0,0"
+          dur="4s"
+          repeatCount="indefinite"
+          additive="sum"/>
+        
+        <circle cx="25" cy="-20" r="10" fill="url(#irisGradient)"/>
+        <circle cx="25" cy="-20" r="4" fill="#000"/>
+        <!-- Reflexo do olho -->
+        <circle cx="22" cy="-22" r="2" fill="#fff" filter="url(#eyeShine)"/>
+      </g>
+    </g>
+    
+    <!-- Boca animada -->
+    <path d="M -30 20 Q 0 40 30 20" stroke="#fff" stroke-width="5" fill="none">
+      <animate attributeName="d" 
+        values="M -30 20 Q 0 40 30 20;M -30 20 Q 0 35 30 20;M -30 20 Q 0 40 30 20"
+        dur="3s"
+        repeatCount="indefinite"
+        calcMode="spline"
+        keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </path>
+    
+    <!-- Texto com efeito de raio -->
+    <g filter="url(#electricity)">
+      <text x="0" y="70" text-anchor="middle" fill="#fff" font-family="Arial Black" font-size="24" filter="url(#glow)">
+        FrogProgramer
+      </text>
+    </g>
+  </g>
+</svg>

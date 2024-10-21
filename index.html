@@ -13,11 +13,11 @@
     <header>
         <nav class="menuPrincipal">
             <a href="pagina-inicial.html" target="_blank" class="logo">
-                <img src="imagens/imagens galery/3d-company-logos-design-logo-online-2300300px.png" alt="meu logo">
+                <img src="logo.svg" alt="meu logo">
             </a>
             <ul class="listaCategorias">
-                <li class="Páginas"><a href="#" target="_blank"><i class="fas fa-file-alt"></i> Páginas</a></li>
-                <li class="Aplicativos"><a href="#" target="_blank"><i class="fas fa-mobile-alt"></i> Aplicativos</a></li>
+                <li class="Páginas"><a href="LAndPage/landpage.html" target="_blank"><i class="fas fa-file-alt"></i> Páginas</a></li>
+                <li class="Aplicativos"><a href="#" target="_blank"><i class="fas fa-mobile-alt"></i><p></p> Aplicativos</a></li>
                 <li class="Exclusivos"><a href="#" target="_blank"><i class="fas fa-star"></i> Exclusivos</a></li>
                 <li class="Jogos"><a href="#" target="_blank"><i class="fas fa-gamepad"></i> Jogos</a></li>
                 <li class="Shopping"><a href="shopping.html" target="_blank"><i class="fas fa-shopping-cart"></i> Shopping</a></li>
@@ -38,6 +38,28 @@
             <img src="imagens/imagens galery/wp6531884onepice.webp" alt="Imagem 3">
             <img src="imagens/imagens galery/ixpap-25anime2.jpg" alt="Imagem 4">
         </div>
+
+        <div class="video-container">
+            <!-- Vídeo -->
+            <video id="meuVideo" width="700" controls>
+                Seu navegador não suporta a exibição de vídeos.
+            </video>
+    
+            <!-- Controles de entrada (URL e arquivo local) -->
+            <div class="input-controls">
+                <input type="text" id="videoURL" placeholder="Insira o link do vídeo" />
+                <button id="loadVideoBtn">Carregar Vídeo</button>
+                <input type="file" id="videoFile" accept="video/*">
+            </div>
+    
+            <!-- Controles de reprodução -->
+            <div class="controls">
+                <button id="playBtn"><i class="icon-play"></i> Play</button>
+                <button id="pauseBtn"><i class="icon-pause"></i> Pause</button>
+                <button id="replayBtn"><i class="icon-replay"></i> Replay</button>
+            </div>
+        </div>
+
     </article>
     <section id="contact">
         <h2>Contato</h2>
@@ -69,6 +91,6 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="scripts/script.js" defer></script>
+    
 </body>
 </html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Minha Landing Page Incrível</title>
+
+    <!-- Fonte do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Swiper.js CSS para sliders -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="landpage.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Minha Logo</h3>
+        </div>
+        <ul class="list-unstyled components">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#services">Serviços</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div id="content">
+
+        <!-- Cabeçalho com logo pessoal -->
+        <header class="header">
+            <div class="logo">
+                <img src="logo.svg" alt="Logo Pessoal">
+            </div>
+        </header>
+
+        <!-- Seção de Foto Pessoal Flutuante -->
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <h2>Sobre Mim</h2>
+                <p>Uma pequena descrição sobre quem eu sou e o que eu faço.</p>
+            </div>
+            <div class="floating-image">
+                <img src="assets/imagens/WhatsApp Image 2024-10-06 at 17.32.41.jpeg" alt="Minha Foto">
+            </div>
+        </section>
+
+        <!-- Slider 3D (Three.js ou Swiper.js) -->
+        <section id="slider" class="slider-section">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image: url('slide1.jpg')"></div>
+                    <div class="swiper-slide" style="background-image: url('slide2.jpg')"></div>
+                    <div class="swiper-slide" style="background-image: url('slide3.jpg')"></div>
+                </div>
+
+                <!-- Botões de Navegação -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=SEU_NUMERO" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>© 2024 Meu Nome. Todos os direitos reservados.</p>
+        </footer>
+
+    </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://api.whatsapp.com/send?phone=SEU_NUMERO" class="whatsapp-button" target="_blank">
+        <img src="whatsapp-icon.png" alt="WhatsApp">
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
