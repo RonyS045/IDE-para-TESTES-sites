@@ -286,7 +286,7 @@ footer {
     color: #00acee;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .menuPrincipal .logo img {
         width: 80px;
     }
@@ -316,4 +316,218 @@ footer {
 
 @media (max-width: 480px) {
     .menuPrincipal .logo img {
-        width: 60[_{{{CITATION{{{_1{](https://github.com/ricardo-cas/pandas/tree/eefd8f3ed9250c15e029b7ae59a24ef9f7ffc4ab/GUIA_MARKDOWN.MD)[_{{{CITATION{{{_2{](https://github.com/CarlNierves/CarlNierves.github.io/tree/faf325f68517f148ef66653d9dbd3488d7e85b91/index.php)[_{{{CITATION{{{_3{](https://github.com/NamraWajid292/Chiili_pepper.github.io/tree/7e8366d4fbe0e231cc44d9806177bd9654600797/edit.php)[_{{{CITATION{{{_4{](https://github.com/tanvirtanjum/Business-Tool-v5/tree/38c54584f8d0645f4d4f6561400aba14ab7febad/resources%2Fviews%2FDeliverymanDash%2Fcommon.blade.php)
+        width: 60[_{{{CITATION{{{_1{](https://github.com/ricardo-cas/pandas/tree/eefd8f3ed9250c15e029b7ae59a24ef9f7ffc4ab/GUIA_MARKDOWN.MD)[_{{{CITATION{{{_2{](https://github.com/CarlNierves/CarlNierves.github.io/tree/faf325f68517f148ef66653d9dbd3488d7e85b91/index.php)[_{{{CITATION{{{_3{](https://github.com/NamraWajid292/Chiili_pepper.github.io/tree/7e8366d4fbe0e231cc44d9806177bd9654600797/edit.php)[_{{{CITATION{{{_4{](https://github.com/tanvirtanjum/Business-Tool-v5/tree/38c54584f8d0645f4d4f6561400aba14ab7febad/resources%2Fviews%2FDeliverymanDash%2Fcommon.blade.php) */
+
+
+        /* Reset global e configurações base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configurações base para mobile-first */
+html {
+    font-size: 16px;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header e navegação */
+header {
+    width: 100%;
+    padding: 1rem;
+}
+
+.menuPrincipal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+.listaCategorias {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    list-style: none;
+    gap: 0.5rem;
+}
+
+.listaCategorias li a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    text-decoration: none;
+}
+
+/* Seção Home */
+#home {
+    padding: 1rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Galeria com proporções consistentes */
+#gallery {
+    padding: 1rem;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+/* Container para manter proporção da imagem */
+.gallery > div {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* Proporção 4:3 */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.gallery img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Player de vídeo */
+.video-container {
+    width: 100%;
+    padding: 1rem;
+}
+
+#meuVideo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+}
+
+.input-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.controls {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* Formulário de contato */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+/* Footer */
+footer {
+    padding: 1rem;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Tablet (768px e acima) */
+@media (min-width: 768px) {
+    .menuPrincipal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .listaCategorias {
+        flex-direction: row;
+        width: auto;
+        gap: 1rem;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .video-container {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .input-controls {
+        flex-direction: row;
+    }
+
+    .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+/* Desktop (1024px e acima) */
+@media (min-width: 1024px) {
+    html {
+        font-size: 18px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* Ajuste para telas muito grandes */
+@media (min-width: 1440px) {
+    .gallery {
+        gap: 2rem;
+    }
+}

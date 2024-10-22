@@ -1,0 +1,381 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="shopping.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    
+</head>
+<body>
+
+     
+
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Loja Virtual</h1>
+    </header>
+
+   <!-- Nave bar com ícones de navegação -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a href="index.html" class="navbar-brand">
+            <i class="fas fa-home"></i> Página Inicial
+        </a>
+        <a href="shopping.html" class="nav-link">
+            <i class="fas fa-shopping-cart"></i> Carrinho
+        </a>
+        <a href="pagamento.html" class="nav-link">
+            <i class="fas fa-credit-card"></i> Pagamento
+        </a>
+    </div>
+</nav>
+
+    
+<div class="container mt-5">
+    <section id="products" class="mb-5">
+        <h2 class="text-center mb-4">Produtos</h2>
+        <div class="row">
+            <!-- Lista de Produtos -->
+            <div class="col-md-4 mb-4" data-id="1">
+                <div class="card h-100">
+                    <img src="imagens/1518134-bad-michael-jackson-orig-1.jpg" class="card-img-top" alt="Produto 1">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Produto 1</h5>
+                        <p class="card-text">R$ 50,00</p>
+                        <button class="btn btn-success" onclick="addToCart(1)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4" data-id="2">
+                <div class="card h-100">
+                    <img src="imagens/1b8402589c88c687f40cf02dc9e65c95beatle.jpg" class="card-img-top" alt="Produto 2">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Produto 2</h5>
+                        <p class="card-text">R$ 100,00</p>
+                        <button class="btn btn-success" onclick="addToCart(2)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4" data-id="3">
+                <div class="card h-100">
+                    <img src="imagens/a-ha_-_stay_on_these_roads_-_front.jpg" class="card-img-top" alt="Produto 3">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Produto 3</h5>
+                        <p class="card-text">R$ 200,00</p>
+                        <button class="btn btn-success" onclick="addToCart(3)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4" data-id="4">
+                <div class="card h-100">
+                    <img src="imagens/cyndilauper_unusual_massive.jpg" class="card-img-top" alt="Produto 4">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Produto 4</h5>
+                        <p class="card-text">R$ 300,00</p>
+                        <button class="btn btn-success" onclick="addToCart(4)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4" data-id="5">
+                <div class="card h-100">
+                    <img src="imagens/D_NQ_NP_2X_800349-MLB44199630455_112020-FMadonna.jpg" class="card-img-top" alt="Produto 5">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Produto 5</h5>
+                        <p class="card-text">R$ 400,00</p>
+                        <button class="btn btn-success" onclick="addToCart(5)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4" data-id="6">
+                <div class="card h-100">
+                    <img src="imagens/gunsnroseslogo.jpg" class="card-img-top" alt="Produto 6">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Produto 6</h5>
+                        <p class="card-text">R$ 500,00</p>
+                        <button class="btn btn-success" onclick="addToCart(6)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section id="cart">
+            <h2 class="text-center mb-4">Carrinho</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Preço</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <!-- Produtos do carrinho -->
+                </tbody>
+            </table>
+            <p class="text-end">Total: R$ <span id="total-price">0,00</span></p>
+        </section>
+
+        <a href="pagamento.html" class="btn btn-primary">Finalizar Compra</a>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="shopping.js" defer></script>
+</body>
+</html>
+
+
+CSS
+
+:root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 2rem 0;
+            margin-bottom: 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .navbar {
+            background-color: #fff !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand, .nav-link {
+            color: var(--primary-color) !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-brand:hover, .nav-link:hover {
+            color: var(--secondary-color) !important;
+            transform: translateY(-2px);
+        }
+
+        .nav-link {
+            margin: 0 1rem;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #fff;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img-top {
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-text {
+            color: var(--accent-color);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-success {
+            background-color: var(--secondary-color);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-success:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .cart-section {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 3rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .table {
+            margin-top: 1.5rem;
+        }
+
+        .table th {
+            background-color: var(--primary-color);
+            color: #fff;
+            font-weight: 500;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-weight: 500;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #c0392b;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        #total-price {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                text-align: center;
+            }
+            
+            .nav-link {
+                margin: 0.5rem 0;
+            }
+        }
+
+        
+SCRIPT
+
+let cart = [];
+
+function addToCart(productId) {
+    const productElement = document.querySelector(`[data-id="${productId}"]`);
+    const productName = productElement.querySelector('.card-title').textContent;
+    const productPrice = parseFloat(productElement.querySelector('.card-text').textContent.replace('R$', '').trim());
+
+    const product = cart.find(item => item.id === productId);
+    if (product) {
+        product.quantity++;
+    } else {
+        cart.push({ id: productId, name: productName, price: productPrice, quantity: 1 });
+    }
+
+    updateCart();
+}
+
+function removeFromCart(productId) {
+    const productIndex = cart.findIndex(item => item.id === productId);
+    if (productIndex > -1) {
+        cart[productIndex].quantity--;
+        if (cart[productIndex].quantity === 0) {
+            cart.splice(productIndex, 1);
+        }
+        updateCart();
+    }
+}
+
+function updateCart() {
+    const cartItemsElement = document.getElementById('cart-items');
+    cartItemsElement.innerHTML = '';
+
+    let totalPrice = 0;
+    cart.forEach(product => {
+        totalPrice += product.price * product.quantity;
+        const cartRow = `
+            <tr>
+                <td>${product.name}</td>
+                <td>${product.quantity}</td>
+                <td>R$ ${product.price.toFixed(2)}</td>
+                <td>
+                    <button class="btn btn-danger" onclick="removeFromCart(${product.id})">Remover</button>
+                </td>
+            </tr>
+        `;
+        cartItemsElement.insertAdjacentHTML('beforeend', cartRow);
+    });
+
+    document.getElementById('total-price').textContent = totalPrice.toFixed(2);
+}
+
+// Salvar o carrinho no localStorage
+window.onbeforeunload = () => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+};
+
+// Carregar carrinho ao abrir a página
+window.onload = () => {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        updateCart();
+    }
+};
