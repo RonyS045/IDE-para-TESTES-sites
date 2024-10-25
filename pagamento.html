@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="pagamento.css">
-
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
 </head>
 <body>
 
@@ -57,6 +57,67 @@
         </section>
     </div>
 
+    <div id="cardPaymentBrick_container"></div>
+    <script>
+      const mp = new MercadoPago('YOUR_PUBLIC_KEY', {
+        locale: 'pt-BR'
+      });
+      const bricksBuilder = mp.bricks();
+      const renderCardPaymentBrick = async (bricksBuilder) => {
+        const settings = {
+          initialization: {
+            amount: 100, // valor total a ser pago
+            payer: {
+              email: "",
+            },
+          },
+          customization: {
+            visual: {
+              style: {
+                customVariables: {
+                  theme: 'default', // | 'dark' | 'bootstrap' | 'flat'
+                }
+              }
+            },
+              paymentMethods: {
+                maxInstallments: 1,
+              }
+          },
+          callbacks: {
+            onReady: () => {
+              // callback chamado quando o Brick estiver pronto
+            },
+            onSubmit: (cardFormData) => {
+              //  callback chamado o usuário clicar no botão de submissão dos dados
+              //  exemplo de envio dos dados coletados pelo Brick para seu servidor
+              return new Promise((resolve, reject) => {
+                fetch("/process_payment", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify(cardFormData)
+                })
+                  .then((response) => {
+                    // receber o resultado do pagamento
+                    resolve();
+                  })
+                  .catch((error) => {
+                    // lidar com a resposta de erro ao tentar criar o pagamento
+                    reject();
+                  })
+              });
+            },
+            onError: (error) => {
+              // callback chamado para todos os casos de erro do Brick
+            },
+          },
+        };
+        window.cardPaymentBrickController = await bricksBuilder.create('cardPayment', 'cardPaymentBrick_container', settings);
+      };
+      renderCardPaymentBrick(bricksBuilder);
+    </script>
+
     <script>
         document.getElementById('payment-type').addEventListener('change', function() {
             const paymentType = this.value;
@@ -64,5 +125,6 @@
             document.getElementById('pix-info').style.display = paymentType === 'pix' ? 'block' : 'none';
         });
     </script>
+    <script src="shopping.js"></script>
 </body>
 </html>

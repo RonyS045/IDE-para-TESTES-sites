@@ -24,55 +24,63 @@
     <link rel="stylesheet" href="landpage.css">
 </head>
 <body>
-    <!-- Toggle Sidebar Button -->
-    <button id="sidebarToggle" class="sidebar-toggle">
-        <i class="fas fa-bars"></i>
-    </button>
+    
+    <!-- Botão do Menu com Design Melhorado -->
+<button id="sidebarToggle" class="hamburger-button">
+    <div class="hamburger">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </div>
+</button>
 
-    <!-- Sidebar -->
-    <nav id="sidebar">
-        <div class="sidebar-header">
-            <img src="logo.svg" alt="Logo" class="sidebar-logo">
-            <h3>Ronald</h3>
-        </div>
+<!-- Overlay para o menu -->
+<div class="menu-overlay" id="menuOverlay"></div>
 
-        <ul class="list-unstyled components">
-            <li class="active">
-                <a href="#home">
-                    <i class="fas fa-home"></i>
-                    <span>Home</span>
-                </a>
-            </li>
-            <li>
-                <a href="#about">
-                    <i class="fas fa-user"></i>
-                    <span>Sobre</span>
-                </a>
-            </li>
-            <li>
-                <a href="#portfolio">
-                    <i class="fas fa-briefcase"></i>
-                    <span>Portfolio</span>
-                </a>
-            </li>
-            <li>
-                <a href="#services">
-                    <i class="fas fa-cogs"></i>
-                    <span>Serviços</span>
-                </a>
-            </li>
-            <li>
-                <a href="#contact">
-                    <i class="fas fa-envelope"></i>
-                    <span>Contato</span>
-                </a>
-            </li>
-        </ul>
+<!-- Menu Lateral -->
+<nav id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+        <img src="logo.svg" alt="Logo" class="sidebar-logo">
+        <h3>Seu Nome</h3>
+    </div>
 
-        <div class="sidebar-footer">
-            <p>© 2024 Todos os direitos reservados</p>
-        </div>
-    </nav>
+    <ul class="sidebar-menu">
+        <li class="menu-item active">
+            <a href="#home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#about">
+                <i class="fas fa-user"></i>
+                <span>Sobre</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#portfolio">
+                <i class="fas fa-briefcase"></i>
+                <span>Portfolio</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#services">
+                <i class="fas fa-cogs"></i>
+                <span>Serviços</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#contact">
+                <i class="fas fa-envelope"></i>
+                <span>Contato</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="sidebar-footer">
+        <p>© 2024 Todos os direitos reservados</p>
+    </div>
+</nav>
 
     <!-- Conteúdo Principal -->
     <div id="content">
