@@ -24,63 +24,62 @@
     <link rel="stylesheet" href="landpage.css">
 </head>
 <body>
-    
-    <!-- Botão do Menu com Design Melhorado -->
-<button id="sidebarToggle" class="hamburger-button">
-    <div class="hamburger">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
+   
+
+
+    <button class="hamburger-button">
+        <div class="hamburger">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </div>
+    </button>
+
+    <div class="menu-overlay"></div>
+
+    <div class="sidebar">
+        <div class="profile-card">
+            <div class="profile-content">
+                <img src="logo.svg" alt="Perfil" class="profile-image">
+            </div>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li class="menu-item">
+                <a href="#">
+                    <i class="fas fa-home"></i>Dashboard
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#">
+                    <i class="fas fa-user"></i>Perfil
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#">
+                    <i class="fas fa-tasks"></i>Projetos
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#">
+                    <i class="fas fa-users"></i>Equipe
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#">
+                    <i class="fas fa-cog"></i>Configurações
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="https://www.msn.com/pt-br/feed?ocid=msedgntp&pc=U531" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>Sair
+                </a>
+            </li>
+        </ul>
     </div>
-</button>
 
-<!-- Overlay para o menu -->
-<div class="menu-overlay" id="menuOverlay"></div>
-
-<!-- Menu Lateral -->
-<nav id="sidebar" class="sidebar">
-    <div class="sidebar-header">
-        <img src="logo.svg" alt="Logo" class="sidebar-logo">
-        <h3>Seu Nome</h3>
-    </div>
-
-    <ul class="sidebar-menu">
-        <li class="menu-item active">
-            <a href="#home">
-                <i class="fas fa-home"></i>
-                <span>Home</span>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="#about">
-                <i class="fas fa-user"></i>
-                <span>Sobre</span>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="#portfolio">
-                <i class="fas fa-briefcase"></i>
-                <span>Portfolio</span>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="#services">
-                <i class="fas fa-cogs"></i>
-                <span>Serviços</span>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="#contact">
-                <i class="fas fa-envelope"></i>
-                <span>Contato</span>
-            </a>
-        </li>
-    </ul>
-
-    <div class="sidebar-footer">
-        <p>© 2024 Todos os direitos reservados</p>
-    </div>
-</nav>
+   
+   
 
     <!-- Conteúdo Principal -->
     <div id="content">
