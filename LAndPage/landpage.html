@@ -27,7 +27,7 @@
    
 
 
-    <button class="hamburger-button">
+    <button class="hamburger-button" aria-label="Menu">
         <div class="hamburger">
             <div class="hamburger-line"></div>
             <div class="hamburger-line"></div>
@@ -46,35 +46,51 @@
 
         <ul class="sidebar-menu">
             <li class="menu-item">
-                <a href="#">
+                <a href="dashboard.html">
                     <i class="fas fa-home"></i>Dashboard
                 </a>
             </li>
             <li class="menu-item">
-                <a href="#">
+                <a href="profile.html">
                     <i class="fas fa-user"></i>Perfil
                 </a>
             </li>
             <li class="menu-item">
-                <a href="#">
+                <a href="projects.html">
                     <i class="fas fa-tasks"></i>Projetos
                 </a>
             </li>
             <li class="menu-item">
-                <a href="#">
+                <a href="team.html">
                     <i class="fas fa-users"></i>Equipe
                 </a>
             </li>
             <li class="menu-item">
-                <a href="#">
+                <a href="settings.html">
                     <i class="fas fa-cog"></i>Configurações
                 </a>
             </li>
             <li class="menu-item">
-                <a href="https://www.msn.com/pt-br/feed?ocid=msedgntp&pc=U531" id="logout-btn">
+                <a href="#" id="logout-btn">
                     <i class="fas fa-sign-out-alt"></i>Sair
                 </a>
             </li>
+
+            <div class="modal" id="logout-modal">
+                <div class="modal-content">
+                    <h2 class="modal-title">Confirmar Saída</h2>
+                    <p class="modal-text">Tem certeza que deseja sair do sistema?</p>
+                    <div class="modal-buttons">
+                        <button class="modal-btn confirm-btn" id="confirm-logout">
+                            <i class="fas fa-sign-out-alt"></i> Sair
+                        </button>
+                        <button class="modal-btn cancel-btn" id="cancel-logout">
+                            <i class="fas fa-times"></i> Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
         </ul>
     </div>
 

@@ -22,21 +22,24 @@ body {
     color: var(--text-color);
 }
 
-/* styles.css */
 :root {
-    --menu-color: #2563eb;
-    --menu-hover: #1d4ed8;
+    --menu-width: 280px;
     --menu-size: 60px;
-    --line-height: 3px;
-    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --menu-width: 300px;
+    --menu-color: #009efd;
+    --menu-hover: #0077ff;
+    --transition: 0.3s ease;
+    --line-height: 2px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: #f0f2f5;
-    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
 }
 
 /* Botão Hamburger */
@@ -125,6 +128,9 @@ body {
     transition: all var(--transition);
     z-index: 999;
     overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--menu-color) transparent;
 }
 
 .sidebar.active {
@@ -135,8 +141,8 @@ body {
 .profile-card {
     position: relative;
     margin: 20px auto;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
     cursor: pointer;
     transition: all var(--transition);
@@ -146,7 +152,7 @@ body {
     content: '';
     position: absolute;
     inset: -2px;
-    background: linear-gradient(45deg, #00ccff, #0e1538, #0e1538, #d400d4);
+    background: linear-gradient(45deg, var(--menu-color), #0e1538, #0e1538, #d400d4);
     animation: animate 4s linear infinite;
 }
 
@@ -168,14 +174,13 @@ body {
     inset: 3px;
     z-index: 3;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 .profile-image {
-    width: 120px;
-    height: 120px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     object-fit: cover;
     z-index: 3;
@@ -201,13 +206,15 @@ body {
     text-decoration: none;
     border-radius: 12px;
     transition: all var(--transition);
+    font-size: 0.95rem;
 }
 
 .menu-item a i {
     margin-right: 15px;
-    font-size: 1.2em;
+    font-size: 1.1em;
     width: 20px;
     text-align: center;
+    transition: all var(--transition);
 }
 
 .menu-item a:hover {
@@ -216,76 +223,112 @@ body {
     transform: translateX(5px);
 }
 
+.menu-item a:hover i {
+    transform: scale(1.1);
+}
+
 /* Responsividade */
+@media (max-width: 1024px) {
+    :root {
+        --menu-width: 260px;
+        --menu-size: 55px;
+    }
+    
+    .profile-card {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .profile-image {
+        width: 85px;
+        height: 85px;
+    }
+}
+
 @media (max-width: 768px) {
-    .hamburger-button {
+    :root {
+        --menu-width: 240px;
         --menu-size: 50px;
     }
     
-    .sidebar {
-        width: 85%;
-        max-width: var(--menu-width);
+    .hamburger-button {
+        top: 15px;
+        left: 15px;
+    }
+    
+    .profile-card {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .profile-image {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .menu-item a {
+        padding: 12px 16px;
+        font-size: 0.9rem;
     }
 }
 
-/* Modal de Confirmação */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1001;
-    align-items: center;
-    justify-content: center;
+@media (max-width: 480px) {
+    :root {
+        --menu-width: 85%;
+        --menu-size: 45px;
+    }
+    
+    .hamburger-button {
+        top: 10px;
+        left: 10px;
+    }
+    
+    .profile-card {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .profile-image {
+        width: 75px;
+        height: 75px;
+    }
+    
+    .menu-item a {
+        padding: 10px 14px;
+        font-size: 0.85rem;
+    }
+    
+    .menu-item a i {
+        font-size: 1em;
+        margin-right: 12px;
+    }
 }
 
-.modal.active {
-    display: flex;
+/* Suporte para dark mode */
+@media (prefers-color-scheme: dark) {
+    .sidebar {
+        background: rgba(23, 23, 23, 0.98);
+    }
+    
+    .menu-item a {
+        color: #e5e5e5;
+    }
+    
+    .hamburger-button {
+        background: rgba(23, 23, 23, 0.95);
+    }
+    
+    .profile-card::after {
+        background: #171717;
+    }
 }
 
-.modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    max-width: 300px;
-    width: 90%;
-}
-
-.modal-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.modal-btn {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.confirm-btn {
-    background: var(--menu-color);
-    color: white;
-}
-
-.confirm-btn:hover {
-    background: var(--menu-hover);
-}
-
-.cancel-btn {
-    background: #e5e7eb;
-    color: #374151;
-}
-
-.cancel-btn:hover {
-    background: #d1d5db;
+/* Suporte para redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
 /* Logo Animation */
@@ -306,7 +349,116 @@ body {
 .logo:hover img {
     transform: scale(1.05);
     filter: drop-shadow(0 0 15px rgba(0, 158, 253, 0.4));
+}/* Modal de Confirmação */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition);
 }
+
+.modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 320px;
+    width: 90%;
+    transform: scale(0.9);
+    transition: transform var(--transition);
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.modal-text {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.modal-btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.confirm-btn {
+    background: var(--menu-color);
+    color: white;
+}
+
+.confirm-btn:hover {
+    background: var(--menu-hover);
+    transform: translateY(-2px);
+}
+
+.cancel-btn {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.cancel-btn:hover {
+    background: #d1d5db;
+    transform: translateY(-2px);
+}
+
+/* Dark Mode para o Modal */
+@media (prefers-color-scheme: dark) {
+    .modal-content {
+        background: #1f2937;
+    }
+
+    .modal-title {
+        color: #e5e7eb;
+    }
+
+    .modal-text {
+        color: #9ca3af;
+    }
+
+    .cancel-btn {
+        background: #374151;
+        color: #e5e7eb;
+    }
+
+    .cancel-btn:hover {
+        background: #4b5563;
+    }
+}
+
+
 
 /* Perfil Circular Brilhante */
 .floating-image {
