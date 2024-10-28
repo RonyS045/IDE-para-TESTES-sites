@@ -584,6 +584,53 @@ body {
     transform: translateY(-10px);
 }
 
+.MinhaImagemCirculo img{
+
+    width: 300px;
+    height: auto;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Suaviza a transição */
+    padding: 2px;
+    position: absolute;
+
+}
+
+.MinhaImagemCirculo{
+
+    display: flex;
+    justify-content: first baseline;
+
+}
+
+.MinhaImagemCirculo img:hover {
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); /* Brilho ao redor da imagem */
+    transform: scale(1.05); /* Leve aumento para destacar */
+    border-radius: 100px 100px 100px 100px;
+    margin: 10px;
+}
+.MinhaImagemCirculo01 img{
+
+    width: 300px;
+    height: auto;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Suaviza a transição */
+    padding: 2px;
+    position: absolute;
+
+}
+
+.MinhaImagemCirculo01{
+
+    display: flex;
+    justify-content: end;
+
+}
+
+.MinhaImagemCirculo01 img:hover {
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); /* Brilho ao redor da imagem */
+    transform: scale(1.05); /* Leve aumento para destacar */
+    border-radius: 100px 100px 100px 100px;
+    margin: 10px;
+}
+
 
 .MeuQrcode{
 
