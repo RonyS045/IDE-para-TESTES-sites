@@ -584,6 +584,22 @@ body {
     transform: translateY(-10px);
 }
 
+
+.MeuQrcode{
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.MeuQrcode img{
+
+    width: 100px;
+    height: auto;
+
+}
+
+
 /* Footer Impressionante */
 .footer {
     background: linear-gradient(135deg, var(--dark-bg), var(--primary-color));
