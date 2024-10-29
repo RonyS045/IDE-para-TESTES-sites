@@ -815,3 +815,233 @@ body {
 .fadeIn {
     animation: fadeIn 1s ease-out;
 }
+
+
+/* Mobile First Media Queries */
+
+/* Base styles (mobile first) */
+:root {
+    --container-padding: 15px;
+    --section-spacing: 40px;
+}
+
+/* Container responsivo */
+.container {
+    width: 100%;
+    padding-right: var(--container-padding);
+    padding-left: var(--container-padding);
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 100%;
+}
+
+/* Seções responsivas */
+section {
+    padding: var(--section-spacing) 0;
+}
+
+/* Hero Section Responsivo */
+.hero-section {
+    padding: 60px 0;
+}
+
+.hero-title {
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.hero-buttons .btn {
+    width: 100%;
+}
+
+/* About Section Responsivo */
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+.stat-item {
+    padding: 15px;
+}
+
+/* Portfolio Section Responsivo */
+.portfolio-section .swiper-container {
+    padding: 20px 0;
+}
+
+.portfolio-item {
+    width: 100%;
+}
+
+/* Contact Section Responsivo */
+.contact-info {
+    margin-bottom: 30px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+/* Footer Responsivo */
+.social-icons {
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Imagens responsivas */
+.MinhaImagemCirculo,
+.MinhaImagemCirculo01 {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.MinhaImagemCirculo img,
+.MinhaImagemCirculo01 img {
+    width: 200px;
+    height: auto;
+}
+
+.MeuQrcode {
+    margin: 30px 0;
+}
+
+/* Small devices (landscape phones) */
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+    
+    .hero-buttons {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    
+    .hero-buttons .btn {
+        width: auto;
+    }
+    
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    :root {
+        --container-padding: 20px;
+        --section-spacing: 60px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .about-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .MinhaImagemCirculo,
+    .MinhaImagemCirculo01 {
+        position: absolute;
+    }
+    
+    .MinhaImagemCirculo {
+        justify-content: flex-start;
+    }
+    
+    .MinhaImagemCirculo01 {
+        justify-content: flex-end;
+    }
+    
+    .MinhaImagemCirculo img,
+    .MinhaImagemCirculo01 img {
+        width: 250px;
+    }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    :root {
+        --container-padding: 30px;
+        --section-spacing: 80px;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .MinhaImagemCirculo img,
+    .MinhaImagemCirculo01 img {
+        width: 300px;
+    }
+}
+
+/* Extra large devices */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* XXL devices */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+/* Otimizações de performance */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Ajustes para melhor acessibilidade */
+@media (prefers-contrast: more) {
+    :root {
+        --primary-color: #000;
+        --secondary-color: #fff;
+    }
+}
+
+/* Suporte para modo escuro */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light-bg: #1a1a1a;
+        --text-color: #ffffff;
+    }
+}
