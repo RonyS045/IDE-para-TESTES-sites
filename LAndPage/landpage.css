@@ -597,7 +597,7 @@ body {
 .MinhaImagemCirculo{
 
     display: flex;
-    justify-content: first baseline;
+    justify-content: start;
 
 }
 
@@ -613,7 +613,7 @@ body {
     height: auto;
     transition: box-shadow 0.3s ease, transform 0.3s ease; /* Suaviza a transição */
     padding: 2px;
-    position: absolute;
+    position: relative;
 
 }
 
