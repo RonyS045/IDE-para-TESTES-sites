@@ -28,6 +28,7 @@ body {
     background-attachment: fixed; /* Faz com que a imagem de fundo permaneça fixa ao rolar a página */
     color: var(--text-color);
     color:#00ff00;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
     
 
