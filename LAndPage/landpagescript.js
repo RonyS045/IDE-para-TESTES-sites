@@ -89,15 +89,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Adicionar estilos CSS para o slide destacado
-// const style = document.createElement('style');
-// style.textContent = `
-//     .swiper-slide.highlighted {
-//         transform: scale(1.05);
-//         box-shadow: 0 0 20px rgba(255,255,255,0.3);
-//         z-index: 2;
-//     }
-// `;
+// Adicionar estilos CSS para o slide destacado MENU SANDUICHE
+const style = document.createElement('style');
+style.textContent = `
+    .swiper-slide.highlighted {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(255,255,255,0.3);
+        z-index: 2;
+    }
+`;
 document.head.appendChild(style);
 
     
