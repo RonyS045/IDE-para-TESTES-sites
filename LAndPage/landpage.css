@@ -3,7 +3,7 @@
     --primary-color: #2a2a72;
     --secondary-color: #009ffd;
     --accent-color: #00d4ff;
-    --text-color: #22FF34;
+    --text-color: hsl(141, 92%, 47%);
     --light-bg: #f8f9fa;
     --dark-bg: #1a1a1a;
     --transition: all 0.3s ease-in-out;
@@ -20,12 +20,14 @@ body {
     overflow-x: hidden;
     background: var(--light-bg);
     color: var(--text-color);
-    background-color: #ff5e1e;
+    background-color: #0ff02a;
     background-image: url("assets/imagens/3451477.jpg");
     background-size: cover; /* Faz com que a imagem ocupe toda a área do elemento */
     background-position: center; /* Centraliza a imagem para um enquadramento melhor */
     background-repeat: no-repeat; /* Evita que a imagem se repita */
     background-attachment: fixed; /* Faz com que a imagem de fundo permaneça fixa ao rolar a página */
+    color: var(--text-color);
+    color:#00ff00;
     }
     
 
