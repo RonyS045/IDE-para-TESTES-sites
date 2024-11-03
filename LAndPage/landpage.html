@@ -17,17 +17,15 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Swiper.js -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
     <!-- CSS Personalizado -->
     <link rel="stylesheet" href="landpage.css">
 </head>
 <body>
-   
-
-
-    <button class="hamburger-button" aria-label="Menu">
+    
+   <button class="hamburger-button" aria-label="Menu">
         <div class="hamburger">
             <div class="hamburger-line"></div>
             <div class="hamburger-line"></div>
@@ -185,49 +183,57 @@
             <img src="assets/imagens/Picsart_24-10-28_14-56-10-521_resultado.png" alt="EU01">
         </div>
 
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="portfolio-section fadeIn">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Meu Portfolio</h2>
-                    <p class="section-subtitle">Alguns dos meus trabalhos recentes</p>
-                </div>
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="portfolio-item">
-                                <img src="projeto1.jpg" alt="Projeto 1">
-                                <div class="portfolio-info">
-                                    <h4>Projeto 1</h4>
-                                    <p>Categoria</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="portfolio-item">
-                                <img src="projeto2.jpg" alt="Projeto 2">
-                                <div class="portfolio-info">
-                                    <h4>Projeto 2</h4>
-                                    <p>Categoria</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="portfolio-item">
-                                <img src="projeto3.jpg" alt="Projeto 3">
-                                <div class="portfolio-info">
-                                    <h4>Projeto 3</h4>
-                                    <p>Categoria</p>
-                                </div>
-                            </div>
+        
+<!-- Portfolio Section -->
+<section id="portfolio" class="portfolio-section fadeIn">
+    <div class="container">
+        <div class="section-header">
+            <h2>Meu Portfolio</h2>
+            <p class="section-subtitle">Alguns dos meus trabalhos recentes</p>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="portfolio-item">
+                        <img src="assets/imagens/3451477.jpg" alt="Projeto 1" class="portfolio-image">
+                        <div class="portfolio-info">
+                            <h4>Projeto 1</h4>
+                            <p>Categoria</p>
                         </div>
                     </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="portfolio-item">
+                        <img src="assets/imagens/74430e511851229230daef3e132a8bad.jpg" alt="Projeto 2" class="portfolio-image">
+                        <div class="portfolio-info">
+                            <h4>Projeto 2</h4>
+                            <p>Categoria</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="portfolio-item">
+                        <img src="assets/imagens/NewEvolution.jpg" alt="Projeto 3" class="portfolio-image">
+                        <div class="portfolio-info">
+                            <h4>Projeto 3</h4>
+                            <p>Categoria</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+            <div class="#"></div>
+            <div class="#"></div>
+            <div class="#"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div class="lightbox-caption"></div>
+</div>
 
         <!-- Contact Section -->
         <section id="contact" class="contact-section fadeIn">

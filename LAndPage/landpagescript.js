@@ -1,25 +1,104 @@
 
     // Inicialização do Swiper
-    const swiper = new Swiper('.swiper-container', {
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: 'auto',
-        coverflowEffect: {
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
+const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    centeredSlides: true,
+    loop: true,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 20
         },
-        pagination: {
-            el: '.swiper-pagination',
+        480: {
+            slidesPerView: 2,
+            spaceBetween: 30
         },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 40
+        }
+    }
+});
+
+// Lightbox functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.querySelector('.lightbox-caption');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    
+    // Adicionar click event em todas as imagens do portfolio
+    document.querySelectorAll('.portfolio-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const img = this.querySelector('.portfolio-image');
+            const title = this.querySelector('h4').textContent;
+            const category = this.querySelector('p').textContent;
+            
+            // Pausar o autoplay quando abrir o lightbox
+            swiper.autoplay.stop();
+            
+            // Configurar e mostrar o lightbox
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightboxCaption.textContent = `${title} - ${category}`;
+            lightbox.classList.add('active');
+            
+            // Adicionar classe de destaque ao slide atual
+            this.closest('.swiper-slide').classList.add('highlighted');
+        });
     });
+    
+    // Fechar lightbox quando clicar no X
+    lightboxClose.addEventListener('click', closeLightbox);
+    
+    // Fechar lightbox quando clicar fora da imagem
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+    
+    // Fechar lightbox quando pressionar ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
+    
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        // Remover destaque de todos os slides
+        document.querySelectorAll('.swiper-slide').forEach(slide => {
+            slide.classList.remove('highlighted');
+        });
+        // Retomar o autoplay quando fechar o lightbox
+        swiper.autoplay.start();
+    }
+});
+
+// Adicionar estilos CSS para o slide destacado
+// const style = document.createElement('style');
+// style.textContent = `
+//     .swiper-slide.highlighted {
+//         transform: scale(1.05);
+//         box-shadow: 0 0 20px rgba(255,255,255,0.3);
+//         z-index: 2;
+//     }
+// `;
+document.head.appendChild(style);
 
     
     document.addEventListener('DOMContentLoaded', function() {
