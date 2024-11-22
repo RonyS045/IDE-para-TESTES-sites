@@ -220,6 +220,26 @@ document.head.appendChild(style);
     });
 
 
+    // Adicione este código JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona o botão de logout
+    const logoutBtn = document.getElementById('logout-btn');
+    
+    // Adiciona o evento de clique
+    logoutBtn.addEventListener('click', function(e) {
+        // Previne o comportamento padrão do link
+        e.preventDefault();
+        
+        // Aqui você pode adicionar a lógica de logout se necessário
+        // Por exemplo, limpar localStorage, sessionStorage, cookies, etc.
+        localStorage.clear();
+        sessionStorage.clear();
+        
+        // Redireciona para a página desejada
+        window.location.href = 'https://www.google.com';
+    });
+});
+
 
 
     
