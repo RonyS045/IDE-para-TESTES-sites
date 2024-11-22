@@ -70,21 +70,86 @@
         </div>
 
     </article>
-    <section id="contact">
-        <h2>Contato</h2>
-        <form action="submit_form.php" method="post" class="contact-form">
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Mensagem:</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+
+    <div class="page-wrapper">
+        <section id="contact">
+            <div class="container">
+                <h2 class="title">Entre em Contato</h2>
+                <div class="form-status" aria-live="polite"></div>
+                
+                <form id="contactForm" class="contact-form" novalidate>
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                required 
+                                minlength="2"
+                                maxlength="100"
+                                autocomplete="name"
+                                data-error="Por favor, insira um nome válido"
+                            >
+                            <label for="name">
+                                <i class="fas fa-user"></i> Nome
+                            </label>
+                            <div class="error-message"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                required
+                                autocomplete="email"
+                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                data-error="Por favor, insira um email válido"
+                            >
+                            <label for="email">
+                                <i class="fas fa-envelope"></i> Email
+                            </label>
+                            <div class="error-message"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                required
+                                minlength="10"
+                                maxlength="1000"
+                                data-error="A mensagem deve ter entre 10 e 1000 caracteres"
+                            ></textarea>
+                            <label for="message">
+                                <i class="fas fa-comment"></i> Mensagem
+                            </label>
+                            <div class="error-message"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn" disabled>
+                        <span class="btn-text">Enviar Mensagem</span>
+                        <span class="btn-icon">
+                            <i class="fas fa-paper-plane"></i>
+                        </span>
+                        <div class="loading-spinner"></div>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </div>
+    
+   
+    
+
     <footer>
         <p>&copy; 2024 Site Futurista. Todos os direitos reservados.</p>
         <div class="social-icons">
@@ -100,6 +165,8 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.7.0/validator.min.js"></script>
+    
     
 </body>
 </html>
